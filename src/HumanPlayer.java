@@ -8,16 +8,18 @@ public class HumanPlayer extends Player {
     }
         // Metodo makeGuess para generar el juego
         public int makeGuess() {
-            // Solicita el nombre al usuario
-            /* System.out.println("Por favor ingresa tu nombre");
-            String nombre = scanner.nextLine(); */
-
+        int guess; //variable numerica
+        do {
             // Solicita el numero al usuario
             System.out.println(getName() + " 😏 "  + " ingresa un numero entre el 01 y el 100: ");
-            int guess = scanner.nextInt();
+            guess = scanner.nextInt();
+
+        if(guess < 0 || guess > 100) { // Evalua el numero
+            System.out.println("Por favor, ingresa un número válido entre 0 y 100.");
+            }
+        } while (guess < 0 || guess > 100);
             getGuesses().add(guess);
             return guess;
         }
-
     }
 

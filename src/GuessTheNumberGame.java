@@ -27,20 +27,21 @@ public class GuessTheNumberGame {
 
         while (guessesMade < maxGuesses) {
             int guess = player.makeGuess();
-            System.out.println("Juego de 🤹‍♂️ "+ player.getName() + " suposición: " + guess);
+            System.out.println("Juego de 🤹‍♂️: "+ player.getName() + " suposición: " + guess);
             guessesMade++;
 
-            if(checkGuess(player, guess))/*(guess == targetNumber)*/ {
+            if(checkGuess(player, guess)) {
                 System.out.println(player.getName() + " ha adivinado el número. ¡Felicidades!");
                 break;
             } else {
-                String result = (guess < targetNumber) ? "muy baja" : "muy alta";
-                System.out.println("La suposición fue " + result + ". Intenta nuevamente.\n");
+                String result = (guess < targetNumber) ? "Muy baja 👎" : "Muy alta 🔥";
+                System.out.println("Tu resultado fue: " + result + ". Intenta nuevamente.\n");
             }
 
             /*checkGuess(player, guess);*/
             System.out.println("Historial de suposiciones de " + player.getName() + ":" + player.getGuesses());
         }
+
         if (guessesMade == maxGuesses) {
             System.out.println("Se han agotado las suposiciones. El número correcto era: " + targetNumber);
         }
