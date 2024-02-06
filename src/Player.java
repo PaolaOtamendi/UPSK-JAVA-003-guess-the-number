@@ -14,10 +14,12 @@ public abstract class Player {
     public abstract int makeGuess();
 
     public String getName() {
+
         return name;
     }
 
     public List<Integer> getGuesses() {
+
         return guesses;
     }
 }
